@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BCBCBC">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="412dp"
+        android:layout_height="729dp"
+        android:textAlignment="center"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:layout_width="204dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="244dp"
+            android:layout_marginEnd="104dp"
+            android:background="@color/white"
+
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="code"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="203dp"
+            android:layout_height="147dp"
+            android:layout_marginStart="104dp"
+            android:layout_marginTop="96dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text=" Please Provide Code to Join a Table"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="288dp"
+            android:layout_height="94dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="212dp"
+            android:background="@color/purple_200"
+            android:text="Join and Proceed to Menu"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="368dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginBottom="16dp"
+            android:background="#653C3C"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="310dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="16dp"
+            android:text="Visitors entering an indoor restaurant common area are required to wear a mask. "
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

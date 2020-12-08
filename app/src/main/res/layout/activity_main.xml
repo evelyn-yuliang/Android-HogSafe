@@ -141,7 +141,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/back" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

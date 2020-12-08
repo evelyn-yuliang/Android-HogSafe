@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Project_1110</string>
+    <string name="app_name">HogSafe_UI</string>
+    <string name="hogsafe">HogSafe</string>
+    <string name="eat_safe_st">Eat Safe Stay Safe</string>
+    <string name="takeout">Take Out</string>
+    <string name="dinein">Dine in</string>
 </resources>
