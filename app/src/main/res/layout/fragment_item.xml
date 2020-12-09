@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    xmlns:numberpicker="http://schemas.android.com/apk/res-auto">
 
     <ImageView
         android:id="@+id/frameBackground"
@@ -20,18 +23,35 @@
             android:layout_height="20dp"
             android:text="Salmon and Avocado roll" />
 
-        <TextView
+        <!-- <EditText
             android:id="@+id/item_quantity"
-            android:layout_width="match_parent"
+            android:layout_width="50dp"
             android:layout_height="20dp"
             android:layout_below="@id/content"
-            android:text="8 pcs" />
+            android:text="1" /> -->
+
+        <com.travijuu.numberpicker.library.NumberPicker
+            android:id="@+id/item_quantity"
+            android:layout_width="130dp"
+            android:layout_height="20dp"
+            numberpicker:min="1"
+            numberpicker:max="50"
+            numberpicker:value="1"
+            numberpicker:unit="1"
+            numberpicker:focusable="false"
+            android:layout_below="@id/content" />
 
         <Button
+            android:id="@+id/addToCart"
             android:layout_width="40dp"
-            android:layout_height="15dp"
-            android:layout_below="@id/item_quantity" />
+            android:layout_height="40dp"
+            android:layout_alignEnd="@id/content" />
 
+        <TextView
+            android:id="@+id/cost"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/item_quantity"/>
     </RelativeLayout>
 
 </LinearLayout>

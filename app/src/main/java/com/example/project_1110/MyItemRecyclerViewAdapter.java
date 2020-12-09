@@ -2,17 +2,23 @@ package com.example.project_1110;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Context;
-import android.net.Uri;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.project_1110.dummy.DummyContent.DummyItem;
+import com.google.gson.Gson;
 
 import java.util.List;
+import com.travijuu.numberpicker.library.NumberPicker;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
@@ -36,9 +42,26 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
+        //holder.mIdView.setValue(mValues.get(position).id);
         holder.mContentView.setText(mValues.get(position).content);
         holder.mThumbnailView.setImageResource(R.drawable.background);
+        holder.mCostView.setText(mValues.get(position).itemCost);
+
+        holder.btnAddToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Gson gson = new Gson();
+                //((Activity)v.getContext()).getFragmentManager().findFragmentById(R.id.menu_item_list_frame);
+                DummyItem d = new DummyItem("1","Sushi","dell","http://bitly.c","$20");
+                String json = gson.toJson(d);
+                SharedPreferences preferences = ((Activity)v.getContext()).getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("CART_DATA",json);
+                editor.apply();
+                Toast.makeText(v.getContext(), "Added to cart!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override
@@ -48,18 +71,22 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView mIdView;
+        public final NumberPicker mIdView;
         public final TextView mContentView;
         public final ImageView mThumbnailView;
+        public final TextView mCostView;
+        public final Button btnAddToCart;
 
         public DummyItem mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.item_quantity);
+            mIdView = (NumberPicker) view.findViewById(R.id.item_quantity);
             mContentView = (TextView) view.findViewById(R.id.content);
             mThumbnailView = (ImageView) view.findViewById(R.id.frameBackground);
+            mCostView = (TextView) view.findViewById(R.id.cost);
+            btnAddToCart = (Button)view.findViewById(R.id.addToCart);
         }
 
         @Override
