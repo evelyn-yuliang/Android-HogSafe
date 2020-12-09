@@ -15,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
@@ -24,15 +26,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private ArrayList<String> restName;
     private ArrayList<String> restType;
     private ArrayList<String> restAdd;
-    private int[] foodImage;
+    private ArrayList<String> restImage;
+    private boolean dineIn;
 
 
-    public RecyclerViewAdapter(Context mContext,ArrayList<String> restName, ArrayList<String> restType, ArrayList<String> restAdd, int[] foodImage) {
+
+    public RecyclerViewAdapter(Context mContext,ArrayList<String> restName, ArrayList<String> restType, ArrayList<String> restAdd, ArrayList<String> restImage,boolean dineIn) {
         this.restName = restName;
         this.restType = restType;
         this.restAdd = restAdd;
-        this.foodImage = foodImage;
+        this.restImage = restImage;
         this.mContext = mContext;
+        this.dineIn = dineIn;
     }
 
     @NonNull
@@ -47,8 +52,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         Log.d(TAG, "onBindViewHolder: called");
 
-        int image_id = foodImage[position];
-        holder.imageFood.setImageResource(image_id);
+        Glide.with(mContext)
+                .asBitmap()
+                .load(restImage.get(position))
+                .into(holder.imageFood);
         holder.resName.setText(restName.get(position));
         holder.resAdd.setText(restAdd.get(position));
         holder.resType.setText(restType.get(position));
@@ -58,9 +65,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             public void onClick(View v) {
                 Log.d(TAG, "onClick: "+ restName.get(position));
                 Toast.makeText(mContext, restName.get(position), Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(this,SecondActivity.class);
-//                intent.putExtra("note_position",position);
-//                startActivityForResult(intent,1000);
             }
         });
 
@@ -69,13 +73,20 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             public void onClick(View v) {
                 Log.d(TAG, "onClickButton "+ restName.get(position));
                 Toast.makeText(mContext, "Button"+restName.get(position), Toast.LENGTH_SHORT).show();
-                //onClick(v);
+                Intent intent;
+                if(dineIn) {
+                    intent = new Intent(v.getContext(), DineIn.class);
+
+                }else{
+                    intent = new Intent(v.getContext(), DineOut.class);
+
+                }
+                intent.putExtra("restaurant", restName.get(position));
+                v.getContext().startActivity(intent);
             }
         });
     }
-//    private void onClick(View v){
-//
-//    }
+
     @Override
     public int getItemCount() {
         return restName.size();

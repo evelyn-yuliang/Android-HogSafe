@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     private String myResponse;
     private JSONObject jsonObject;
     private JSONArray jsonArray;
-    private int position_check;
     private AutoSuggestAdapter autoSuggestAdapter;
     private Handler handler;
     private String countryId;
@@ -58,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         aTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                position_check = position;
 
                 String str = parent.getAdapter().getItem(position).toString();
                 countryId = autoSuggestAdapter.getCountryId(position);
@@ -159,10 +157,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void onSearchClick(View view) {
 
-        List<String> restaurantName = new ArrayList<>();
-        List<String> restaurantCuisine = new ArrayList<>();
-        List<String> restaurantPhotoUrl = new ArrayList<>();
-        List<String> restaurantAddress = new ArrayList<>();
 
         String s = editText.getText().toString();
         OkHttpClient client = new OkHttpClient();
@@ -184,42 +178,8 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                 if (response.isSuccessful()) {
 
-              //      try {
-
                          myResponse = response.body().string();
                          Log.d("debug", "onResponse: "+myResponse);
-
-//                        jsonObject = new JSONObject(myResponse);
-//                        jsonArray = jsonObject.getJSONArray("restaurants");
-//
-//                        Log.d("debug", "onResponse: "+jsonArray.length());
-//
-//                        for (int i = 0; i < jsonArray.length(); i++) {
-//
-//                            //limit:20, and takeaway can not filter
-//                            JSONObject item = (JSONObject) jsonArray.getJSONObject(i).get("restaurant");
-//
-//                            String name = (String) item.get("name");
-//                            String cuisine = (String) item.get("cuisines");
-//                            String photoUrl = (String) item.get("featured_image");
-//
-//                            JSONObject location = (JSONObject)item.get("location");
-//                            String address = (String) location.get("address");
-//
-//
-//                            Log.i("check", "run:restaurant " + name +" "+ cuisine+" "+photoUrl);
-//                            Log.i("check", "onResponse: "+address);
-
-//                            restaurantName.add(name);
-//                            restaurantCuisine.add(cuisine);
-//                            restaurantPhotoUrl.add(photoUrl);
-//                            restaurantAddress.add(address);
- //                       }
-
-
-   //                 } catch (JSONException e) {
-    //                    e.printStackTrace();
-      //              }
 
 
                     MainActivity.this.runOnUiThread(new Runnable() {
@@ -231,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
                             //Bundle bundle = new Bundle();
                             //bundle.putParcelableArrayList("Restaurant",myResponse);
                             secondActivity.putExtra("RestaurantsList",myResponse);
+                            secondActivity.putExtra("DineIn",true);
                             startActivity(secondActivity);
 
                         }
