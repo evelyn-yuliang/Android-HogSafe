@@ -63,7 +63,9 @@
             android:layout_height="60dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
-            android:text="Start a table" />
+            android:text="Start a table"
+            android:onClick="startTable"
+            />
 
         <Button
             android:id="@+id/buttonJoinTable"
@@ -71,7 +73,9 @@
             android:layout_height="60dp"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/buttonStartTable"
-            android:text="Join a table" />
+            android:text="Join a table"
+            android:onClick="onJoinTable"
+            />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
