@@ -17,16 +17,19 @@ public class SecondActivity extends AppCompatActivity {
 
     private ArrayList<String> restName = new ArrayList<>();
     private ArrayList<String> restType = new ArrayList<>();
-    ;
     private ArrayList<String> restAdd = new ArrayList<>();
-    ;
     private int[] foodImage;
+
+    private String mResponse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        Log.d(TAG, "onCreate: started");
+
+        Intent intent = getIntent();
+        mResponse = intent.getStringExtra("RestaurantsList");
+        Log.d(TAG, "onCreate: "+mResponse);
         initImage();
     }
 
