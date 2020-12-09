@@ -38,7 +38,7 @@ public class DummyContent {
     }
 
     private static DummyItem createDummyItem(int position) {
-        return new DummyItem(String.valueOf(position), " SUSHI Item " + position, makeDetails(position), "@drawable/background","$50");
+        return new DummyItem(String.valueOf(position), " SUSHI Item " + position, makeDetails(position), "@drawable/background","$50","1");
     }
 
     private static String makeDetails(int position) {
@@ -59,13 +59,15 @@ public class DummyContent {
         public final String details;
         public final String thumbnailURL;
         public final String itemCost;
+        public String itemQuantity;
 
-        public DummyItem(String id, String content, String details, String thumbnailURL,String itemCost) {
+        public DummyItem(String id, String content, String details, String thumbnailURL,String itemCost,String itemQuantity) {
             this.id = id;
             this.content = content;
             this.details = details;
             this.thumbnailURL = thumbnailURL;
             this.itemCost = itemCost;
+            this.itemQuantity = itemQuantity;
         }
 
         @Override

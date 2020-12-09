@@ -33,7 +33,7 @@
         <com.travijuu.numberpicker.library.NumberPicker
             android:id="@+id/item_quantity"
             android:layout_width="130dp"
-            android:layout_height="20dp"
+            android:layout_height="30dp"
             numberpicker:min="1"
             numberpicker:max="50"
             numberpicker:value="1"

@@ -17,7 +17,13 @@ import android.widget.Toast;
 import com.example.project_1110.dummy.DummyContent.DummyItem;
 import com.google.gson.Gson;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
+
+import com.google.gson.reflect.TypeToken;
+import com.travijuu.numberpicker.library.Enums.ActionEnum;
+import com.travijuu.numberpicker.library.Interface.ValueChangedListener;
 import com.travijuu.numberpicker.library.NumberPicker;
 
 /**
@@ -27,6 +33,7 @@ import com.travijuu.numberpicker.library.NumberPicker;
 public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
+    public int itemQuantity;
 
     public MyItemRecyclerViewAdapter(List<DummyItem> items) {
         mValues = items;
@@ -40,7 +47,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.mItem = mValues.get(position);
         //holder.mIdView.setValue(mValues.get(position).id);
         holder.mContentView.setText(mValues.get(position).content);
@@ -50,18 +57,35 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         holder.btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Gson gson = new Gson();
-                //((Activity)v.getContext()).getFragmentManager().findFragmentById(R.id.menu_item_list_frame);
-                DummyItem d = new DummyItem("1","Sushi","dell","http://bitly.c","$20");
-                String json = gson.toJson(d);
                 SharedPreferences preferences = ((Activity)v.getContext()).getPreferences(Context.MODE_PRIVATE);
+                String jsonRetreived = preferences.getString("CART_ITEMS","");
+                Gson gson = new Gson();
+                List<DummyItem> cartItems = new ArrayList<DummyItem>();
+                if(jsonRetreived.length()>0) {
+                    Type listType = new TypeToken<List<DummyItem>>() {
+                    }.getType();
+                    cartItems = gson.fromJson(jsonRetreived, listType);
+                }
+
+                DummyItem d = new DummyItem(mValues.get(position).id,mValues.get(position).content,mValues.get(position).details,mValues.get(position).thumbnailURL,
+                        mValues.get(position).itemCost, mValues.get(position).itemQuantity);
+                cartItems.add(d);
+                String json = gson.toJson(cartItems);
+
+                //SharedPreferences preferences = ((Activity)v.getContext()).getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("CART_DATA",json);
+
+                editor.putString("CART_ITEMS",json);
                 editor.apply();
                 Toast.makeText(v.getContext(), "Added to cart!", Toast.LENGTH_SHORT).show();
             }
         });
 
+        holder.mIdView.setValueChangedListener(new ValueChangedListener() {
+            public void valueChanged(int value, ActionEnum action) {
+                mValues.get(position).itemQuantity = Integer.toString(value);
+            }
+        });
     }
 
     @Override
