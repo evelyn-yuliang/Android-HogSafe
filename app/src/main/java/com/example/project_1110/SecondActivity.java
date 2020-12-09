@@ -8,10 +8,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+<<<<<<< HEAD
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+=======
+>>>>>>> sayali
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,6 +81,7 @@ public class SecondActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
+<<<<<<< HEAD
         }
         initRecyclerView();
     }
@@ -111,6 +115,20 @@ public class SecondActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
+=======
+    }
+
+    private void initRecyclerView() {
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, restName, restType, restAdd, foodImage);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+
+
+}
+>>>>>>> sayali
 
 
 

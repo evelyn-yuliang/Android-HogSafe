@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
@@ -32,6 +33,9 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+=======
+import android.view.View;
+>>>>>>> sayali
 
 public class MainActivity extends AppCompatActivity {
 
@@ -100,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+<<<<<<< HEAD
     private void showCity(String s) {
 
         OkHttpClient client = new OkHttpClient();
@@ -207,4 +212,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+=======
+>>>>>>> sayali
 }

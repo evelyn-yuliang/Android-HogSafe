@@ -38,7 +38,11 @@ public class DummyContent {
     }
 
     private static DummyItem createDummyItem(int position) {
+<<<<<<< HEAD
         return new DummyItem(String.valueOf(position), " SUSHI Item " + position, makeDetails(position), "@drawable/background","$50","1");
+=======
+        return new DummyItem(String.valueOf(position), " SUSHI Item " + position, makeDetails(position), "@drawable/background");
+>>>>>>> sayali
     }
 
     private static String makeDetails(int position) {
@@ -58,16 +62,24 @@ public class DummyContent {
         public final String content;
         public final String details;
         public final String thumbnailURL;
+<<<<<<< HEAD
         public final String itemCost;
         public String itemQuantity;
 
         public DummyItem(String id, String content, String details, String thumbnailURL,String itemCost,String itemQuantity) {
+=======
+
+        public DummyItem(String id, String content, String details, String thumbnailURL) {
+>>>>>>> sayali
             this.id = id;
             this.content = content;
             this.details = details;
             this.thumbnailURL = thumbnailURL;
+<<<<<<< HEAD
             this.itemCost = itemCost;
             this.itemQuantity = itemQuantity;
+=======
+>>>>>>> sayali
         }
 
         @Override

@@ -11,10 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
         <activity android:name=".MainActivity2"></activity>
-=======
->>>>>>> sayali
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,13 +22,8 @@
         <activity android:name=".DineOut" />
         <activity android:name=".DineIn" />
         <activity android:name=".MenuView" />
-<<<<<<< HEAD
         <activity android:name=".MainActivity" />
         <activity android:name=".SecondActivity" />
-=======
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".SecondActivity"></activity>
->>>>>>> sayali
     </application>
 
 </manifest>

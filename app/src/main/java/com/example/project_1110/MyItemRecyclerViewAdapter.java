@@ -2,6 +2,7 @@ package com.example.project_1110;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+<<<<<<< HEAD
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -26,6 +27,20 @@ import com.travijuu.numberpicker.library.Enums.ActionEnum;
 import com.travijuu.numberpicker.library.Interface.ValueChangedListener;
 import com.travijuu.numberpicker.library.NumberPicker;
 
+=======
+import android.content.Context;
+import android.net.Uri;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.project_1110.dummy.DummyContent.DummyItem;
+
+import java.util.List;
+
+>>>>>>> sayali
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
  * TODO: Replace the implementation with code for your data type.
@@ -33,7 +48,10 @@ import com.travijuu.numberpicker.library.NumberPicker;
 public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
+<<<<<<< HEAD
     public int itemQuantity;
+=======
+>>>>>>> sayali
 
     public MyItemRecyclerViewAdapter(List<DummyItem> items) {
         mValues = items;
@@ -47,6 +65,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     }
 
     @Override
+<<<<<<< HEAD
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.mItem = mValues.get(position);
         //holder.mIdView.setValue(mValues.get(position).id);
@@ -86,6 +105,13 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
                 mValues.get(position).itemQuantity = Integer.toString(value);
             }
         });
+=======
+    public void onBindViewHolder(final ViewHolder holder, int position) {
+        holder.mItem = mValues.get(position);
+        holder.mIdView.setText(mValues.get(position).id);
+        holder.mContentView.setText(mValues.get(position).content);
+        holder.mThumbnailView.setImageResource(R.drawable.background);
+>>>>>>> sayali
     }
 
     @Override
@@ -95,22 +121,34 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
+<<<<<<< HEAD
         public final NumberPicker mIdView;
         public final TextView mContentView;
         public final ImageView mThumbnailView;
         public final TextView mCostView;
         public final Button btnAddToCart;
+=======
+        public final TextView mIdView;
+        public final TextView mContentView;
+        public final ImageView mThumbnailView;
+>>>>>>> sayali
 
         public DummyItem mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
+<<<<<<< HEAD
             mIdView = (NumberPicker) view.findViewById(R.id.item_quantity);
             mContentView = (TextView) view.findViewById(R.id.content);
             mThumbnailView = (ImageView) view.findViewById(R.id.frameBackground);
             mCostView = (TextView) view.findViewById(R.id.cost);
             btnAddToCart = (Button)view.findViewById(R.id.addToCart);
+=======
+            mIdView = (TextView) view.findViewById(R.id.item_quantity);
+            mContentView = (TextView) view.findViewById(R.id.content);
+            mThumbnailView = (ImageView) view.findViewById(R.id.frameBackground);
+>>>>>>> sayali
         }
 
         @Override
