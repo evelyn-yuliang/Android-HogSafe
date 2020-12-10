@@ -42,7 +42,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+
             android:shadowColor="@color/colorPrimary"
             android:shadowDx="-2"
             android:shadowDy="-2"
@@ -60,7 +60,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="365dp"
-            android:layout_height="520dp"
+            android:layout_height="540dp"
             android:layout_margin="10dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

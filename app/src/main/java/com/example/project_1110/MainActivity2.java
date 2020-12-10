@@ -49,6 +49,8 @@ public class MainActivity2 extends AppCompatActivity {
     private AutoSuggestAdapter autoSuggestAdapter;
     private Handler handler;
     private String countryId;
+    private int count = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,7 @@ public class MainActivity2 extends AppCompatActivity {
         editText = findViewById(R.id.editText);
 
         autoSuggestAdapter = new AutoSuggestAdapter(this, android.R.layout.simple_dropdown_item_1line);
-        aTextView.setThreshold(2);
+        //aTextView.setThreshold(2);
         aTextView.setAdapter(autoSuggestAdapter);
         aTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -185,29 +187,44 @@ public class MainActivity2 extends AppCompatActivity {
                 if (response.isSuccessful()) {
 
                     myResponse = response.body().string();
-                    Log.d("debug", "onResponse: "+myResponse);
+                    Log.d("debug", "onResponse: " + myResponse);
 
 
-                    MainActivity2.this.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
+                    if (myResponse != null) {
+                        try {
+                            jsonObject = new JSONObject(myResponse);
+                            count = (int) jsonObject.get("results_found");
+                            Log.i("debug", "onResponse: " + count);
 
-                            //Intent secondActivity = new Intent(this, SecondActivity.class);
-                            Intent secondActivity = new Intent(getApplicationContext(),SecondActivity.class);
-                            //Bundle bundle = new Bundle();
-                            //bundle.putParcelableArrayList("Restaurant",myResponse);
-                            secondActivity.putExtra("RestaurantsList",myResponse);
-                            secondActivity.putExtra("DineIn",false);
-                            startActivity(secondActivity);
-
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
-                    });
 
 
+                        MainActivity2.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (count == 0) {
+                                    editText.setText("");
+                                    Toast.makeText(MainActivity2.this, "No restaurant found", Toast.LENGTH_SHORT).show();
+
+                                } else {
+                                    //Intent secondActivity = new Intent(this, SecondActivity.class);
+                                    Intent secondActivity = new Intent(getApplicationContext(), SecondActivity.class);
+                                    //Bundle bundle = new Bundle();
+                                    //bundle.putParcelableArrayList("Restaurant",myResponse);
+                                    secondActivity.putExtra("RestaurantsList", myResponse);
+                                    secondActivity.putExtra("DineIn", false);
+                                    startActivity(secondActivity);
+                                }
+                            }
+                        });
+
+
+                    }
                 }
+
             }
-
-
         });
 
 
