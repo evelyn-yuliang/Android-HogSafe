@@ -7,6 +7,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/mainpage"
+    android:layout_margin="10dp"
     android:backgroundTintMode="screen"
     android:clickable="true"
     android:onClick="onClick"
@@ -20,7 +21,7 @@
         android:layout_marginLeft="70dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="96dp"
-        android:background="@color/textBlack"
+        android:background="@drawable/bg_map"
 
         />
 
@@ -48,7 +49,7 @@
         android:layout_marginLeft="36dp"
         android:layout_marginTop="261dp"
         android:alpha="0.8"
-        android:background="@color/black"
+        android:background="@drawable/bg_map"
         android:textAlignment="gravity"
         android:textDirection="firstStrongRtl" />
 
