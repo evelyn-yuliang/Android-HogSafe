@@ -1,3 +1,5 @@
+package com.example.project_1110;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,12 +22,12 @@ public class TakeoutDinein extends AppCompatActivity {
     }
 
     public void onDineInClick(View view) {
-        Intent dineIn = new Intent(this, DineIn.class);
-        startActivity(dineIn);
+        Intent MainActivity = new Intent(this, MainActivity.class);
+        startActivity(MainActivity);
     }
 
     public void onDineOutClick(View view) {
-        Intent dineOut = new Intent(this, DineOut.class);
-        startActivity(dineOut);
+        Intent MainActivity2 = new Intent(this, MainActivity2.class);
+        startActivity(MainActivity2);
     }
 }

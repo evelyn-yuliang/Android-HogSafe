@@ -17,19 +17,9 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    public void onDineInClick(View view) {
-        Intent dineIn = new Intent(this, MainActivity.class);
+    public void onClick(View view) {
+        Intent dineIn = new Intent(this, TakeoutDinein.class);
         startActivity(dineIn);
-    }
-
-    public void onDineOutClick(View view) {
-        Intent dineOut = new Intent(this, MainActivity2.class);
-        startActivity(dineOut);
-    }
-
-    public void onSearchClick(View view) {
-        Intent search = new Intent(this, SecondActivity.class);
-        startActivity(search);
     }
 
 }
