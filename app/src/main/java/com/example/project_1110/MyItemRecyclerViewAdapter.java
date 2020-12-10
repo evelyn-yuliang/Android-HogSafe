@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,11 +54,13 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         holder.mContentView.setText(mValues.get(position).content);
         holder.mThumbnailView.setImageResource(R.drawable.background);
         holder.mCostView.setText(mValues.get(position).itemCost);
+        holder.mQuantity.setValue(Integer.parseInt(mValues.get(position).itemQuantity));
 
         holder.btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences preferences = ((Activity)v.getContext()).getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(v.getContext());
+                //SharedPreferences preferences = ((Activity)v.getContext()).getPreferences(Context.MODE_PRIVATE);
                 String jsonRetreived = preferences.getString("CART_ITEMS","");
                 Gson gson = new Gson();
                 List<DummyItem> cartItems = new ArrayList<DummyItem>();
@@ -100,6 +103,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         public final ImageView mThumbnailView;
         public final TextView mCostView;
         public final Button btnAddToCart;
+        public final NumberPicker mQuantity;
 
         public DummyItem mItem;
 
@@ -111,6 +115,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
             mThumbnailView = (ImageView) view.findViewById(R.id.frameBackground);
             mCostView = (TextView) view.findViewById(R.id.cost);
             btnAddToCart = (Button)view.findViewById(R.id.addToCart);
+            mQuantity = (NumberPicker) view.findViewById(R.id.item_quantity);
         }
 
         @Override

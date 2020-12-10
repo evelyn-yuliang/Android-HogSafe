@@ -4,21 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuView">
+    tools:context=".ViewCart">
 
     <FrameLayout
-        android:id="@+id/menu_item_list_frame"
+        android:id="@+id/cart_item_list_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="60dp" />
+
+    <TextView
+        android:id="@+id/totalCartCost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/view_cart"/>
 
     <Button
         android:id="@+id/view_cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="View Cart"
-        android:onClick="onViewCartClick"
+        android:text="Confirm Checkout!"
+        android:onClick="onConfirmCheckoutClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
