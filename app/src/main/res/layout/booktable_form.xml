@@ -133,7 +133,7 @@
             android:layout_height="65dp"
             android:layout_marginEnd="44dp"
             android:layout_marginBottom="92dp"
-            android:background="#600000"
+            android:background="@drawable/bg_orange"
             android:onClick="bookTable"
             android:text="Book Table and Proceed to Menu"
             android:textColor="#FFFFFF"

@@ -29,18 +29,17 @@
 
     <EditText
         android:id="@+id/textRestaurantDetails"
-        android:layout_width="183dp"
+        android:layout_width="250dp"
         android:layout_height="79dp"
         android:layout_marginTop="150dp"
-        android:background="#3C1111"
         android:fontFamily="sans-serif-condensed-medium"
         android:inputType="textMultiLine"
         android:text="HOYA SUSHI"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
         android:textColorHighlight="#2C1111"
         android:textSize="36sp"
         android:textStyle="bold"
+        android:background="@drawable/bg_rectangle"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -63,7 +62,6 @@
     <RelativeLayout
         android:layout_width="300dp"
         android:layout_height="220dp"
-        android:backgroundTint="#AD320B0B"
         android:layout_marginTop="30dp"
         android:background="@drawable/bg_rectangle"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -78,7 +76,6 @@
             android:textSize="18sp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
-            android:backgroundTint="#371212"
             android:fontFamily="sans-serif-black"
             android:onClick="startTable"
             android:text="Start a table"
@@ -93,11 +90,11 @@
             android:layout_marginTop="20dp"
             android:layout_below="@id/buttonStartTable"
             android:layout_centerHorizontal="true"
-            android:backgroundTint="#371212"
             android:fontFamily="sans-serif-black"
+            android:textColor="#FFFFFF"
             android:onClick="onJoinTable"
             android:text="Join a table" />
-            android:textColor="#FFFCFC" />
+            />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
