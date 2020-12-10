@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.project_1110.dummy.DummyContent;
 import com.example.project_1110.dummy.DummyContent.DummyItem;
 import com.google.gson.Gson;
 
@@ -100,8 +102,13 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
         if (holder.mQuantity.getContext().getClass().getName().equals("com.example.project_1110.ViewCart")){
             holder.btnAddToCart.setVisibility(View.GONE);
+            //holder.mQuantity.setInputType(InputType.TYPE_NULL);
+            holder.mQuantity.setActionEnabled(ActionEnum.DECREMENT,false);
+            holder.mQuantity.setActionEnabled(ActionEnum.INCREMENT,false);
+            holder.mQuantity.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
             holder.mQuantity.setEnabled(false);
             holder.mIdView.setEnabled(false);
+            DummyContent.ITEMS = DummyContent.itemCreator();
         }
     }
 

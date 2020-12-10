@@ -45,7 +45,7 @@ public class DummyContent {
                 "$10","1");
     }
 
-    private static ArrayList<DummyItem> itemCreator (){
+    public static ArrayList<DummyItem> itemCreator (){
         ArrayList arr = new ArrayList<DummyItem>();
         arr.add(new DummyItem("0","Makizushi","Rice cut","https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/01_Sushi.jpg","$10","1"));
         arr.add(new DummyItem("1","Gunkan Maki","Sheet of nori seaweed","https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/06_Sushi.jpg","$23","1"));

@@ -12,6 +12,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
@@ -105,5 +106,12 @@ public class BookTable extends AppCompatActivity {
         Intent viewMenu = new Intent(this, MenuView.class);
         startActivity(viewMenu);
         Toast.makeText(this, "Booked Table!", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+
     }
 }
