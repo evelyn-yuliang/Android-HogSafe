@@ -5,6 +5,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +21,11 @@ import android.widget.Toast;
 import com.example.project_1110.dummy.DummyContent.DummyItem;
 import com.google.gson.Gson;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Type;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +41,6 @@ import com.travijuu.numberpicker.library.NumberPicker;
 public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
-    public int itemQuantity;
 
     public MyItemRecyclerViewAdapter(List<DummyItem> items) {
         mValues = items;
@@ -52,7 +58,9 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         holder.mItem = mValues.get(position);
         //holder.mIdView.setValue(mValues.get(position).id);
         holder.mContentView.setText(mValues.get(position).content);
-        holder.mThumbnailView.setImageResource(R.drawable.background);
+        new ImageLoadTask(mValues.get(position).thumbnailURL, holder.mThumbnailView).execute();
+        //holder.mThumbnailView.setImageBitmap(getBitmapFromUrl(mValues.get(position).thumbnailURL));
+        //holder.mThumbnailView.setImageResource(R.drawable.background);
         holder.mCostView.setText(mValues.get(position).itemCost);
         holder.mQuantity.setValue(Integer.parseInt(mValues.get(position).itemQuantity));
 
@@ -89,6 +97,12 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
                 mValues.get(position).itemQuantity = Integer.toString(value);
             }
         });
+
+        if (holder.mQuantity.getContext().getClass().getName().equals("com.example.project_1110.ViewCart")){
+            holder.btnAddToCart.setVisibility(View.GONE);
+            holder.mQuantity.setEnabled(false);
+            holder.mIdView.setEnabled(false);
+        }
     }
 
     @Override
@@ -123,4 +137,39 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
             return super.toString() + " '" + mContentView.getText() + "'";
         }
     }
+}
+
+class ImageLoadTask extends AsyncTask<Void, Void, Bitmap> {
+
+    private String url;
+    private ImageView imageView;
+
+    public ImageLoadTask(String url, ImageView imageView) {
+        this.url = url;
+        this.imageView = imageView;
+    }
+
+    @Override
+    protected Bitmap doInBackground(Void... params) {
+        try {
+            URL urlConnection = new URL(url);
+            HttpURLConnection connection = (HttpURLConnection) urlConnection
+                    .openConnection();
+            connection.setDoInput(true);
+            connection.connect();
+            InputStream input = connection.getInputStream();
+            Bitmap myBitmap = BitmapFactory.decodeStream(input);
+            return myBitmap;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    protected void onPostExecute(Bitmap result) {
+        super.onPostExecute(result);
+        imageView.setImageBitmap(result);
+    }
+
 }

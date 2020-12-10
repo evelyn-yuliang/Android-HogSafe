@@ -59,7 +59,10 @@ public class ViewCart extends AppCompatActivity {
         Toast.makeText(this, "Cart Checkout Successful!", Toast.LENGTH_SHORT).show();
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         SharedPreferences.Editor editor = preferences.edit();
-		editor.clear();
+        List<DummyContent.DummyItem> cartItems = new ArrayList<DummyContent.DummyItem>();
+        Gson gson = new Gson();
+        String json = gson.toJson(cartItems);
+        editor.putString("CART_ITEMS",json);
         editor.apply();
         Intent cartSuccessActivity = new Intent(getApplicationContext(),HomeActivity.class);
         startActivity(cartSuccessActivity);
