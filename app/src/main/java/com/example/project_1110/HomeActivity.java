@@ -8,21 +8,27 @@ import android.view.View;
 
 public class HomeActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.takeoutdinein);
+
     }
 
     public void onDineInClick(View view) {
-        Intent MainActivity = new Intent(this, MainActivity.class);
-        startActivity(MainActivity);
+        Intent dineIn = new Intent(this, DineIn.class);
+        startActivity(dineIn);
     }
 
     public void onDineOutClick(View view) {
-        Intent MainActivity2 = new Intent(this, MainActivity2.class);
-        startActivity(MainActivity2);
+        Intent dineOut = new Intent(this, DineOut.class);
+        startActivity(dineOut);
     }
 
-    
+    public void onSearchClick(View view) {
+        Intent search = new Intent(this, SecondActivity.class);
+        startActivity(search);
+    }
 }

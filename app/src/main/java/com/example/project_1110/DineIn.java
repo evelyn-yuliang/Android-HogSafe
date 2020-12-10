@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class DineIn extends AppCompatActivity {
@@ -16,6 +17,18 @@ public class DineIn extends AppCompatActivity {
 
     public void onViewMenuClick(View view) {
         Intent viewMenu = new Intent(this, MenuView.class);
+        startActivity(viewMenu);
+    }
+
+    public void startTable(View view) {
+        Intent viewMenu = new Intent(this, BookTable.class);
+        startActivity(viewMenu);
+    }
+
+
+    public void onJoinTable(View view) {
+        Log.d("test","here");
+        Intent viewMenu = new Intent(this, JoinTable.class);
         startActivity(viewMenu);
     }
 }
