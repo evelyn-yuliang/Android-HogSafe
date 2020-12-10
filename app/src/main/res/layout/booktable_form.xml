@@ -117,7 +117,6 @@
             android:id="@+id/planEvent"
             android:layout_width="189dp"
             android:layout_height="47dp"
-            android:layout_marginEnd="104dp"
             android:layout_marginBottom="180dp"
             android:background="#4F2780"
             android:fontFamily="sans-serif-condensed-medium"
@@ -125,13 +124,13 @@
             android:textColor="@color/white"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
 
         <Button
             android:id="@+id/bookTable"
             android:layout_width="323dp"
             android:layout_height="65dp"
-            android:layout_marginEnd="44dp"
             android:layout_marginBottom="92dp"
             android:background="@drawable/bg_orange"
             android:onClick="bookTable"
@@ -139,7 +138,9 @@
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
 
         <View
             android:id="@+id/view"
@@ -149,20 +150,21 @@
             android:layout_marginBottom="16dp"
             android:background="#653C3C"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
 
         <TextView
             android:id="@+id/textView12"
             android:layout_width="310dp"
             android:layout_height="41dp"
-            android:layout_marginStart="60dp"
             android:layout_marginBottom="16dp"
             android:text="Visitors entering an indoor restaurant common area are required to wear a mask. "
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
