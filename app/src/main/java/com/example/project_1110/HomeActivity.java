@@ -13,22 +13,13 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.takeoutdinein);
+        setContentView(R.layout.activity_home);
 
     }
 
-    public void onDineInClick(View view) {
-        Intent dineIn = new Intent(this, DineIn.class);
+    public void onClick(View view) {
+        Intent dineIn = new Intent(this, TakeoutDinein.class);
         startActivity(dineIn);
     }
 
-    public void onDineOutClick(View view) {
-        Intent dineOut = new Intent(this, DineOut.class);
-        startActivity(dineOut);
-    }
-
-    public void onSearchClick(View view) {
-        Intent search = new Intent(this, SecondActivity.class);
-        startActivity(search);
-    }
 }
