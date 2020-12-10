@@ -60,8 +60,7 @@
             android:id="@+id/textView9"
             android:layout_width="228dp"
             android:layout_height="37dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="308dp"
+            android:layout_marginTop="70dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="is it a buy out?"
             android:textAlignment="center"
@@ -69,6 +68,8 @@
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
@@ -103,14 +104,12 @@
 
         <CheckBox
             android:id="@+id/buyOutCheckBox"
-            android:layout_width="39dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginBottom="300dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textColorLink="#CDDC39"
             android:textCursorDrawable="@android:color/holo_orange_light"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/textView9"
+            app:layout_constraintRight_toLeftOf="@id/textView9"
             app:srcCompat="@android:drawable/checkbox_on_background" />
 
         <Button
@@ -146,7 +145,6 @@
             android:id="@+id/view"
             android:layout_width="368dp"
             android:layout_height="44dp"
-            android:layout_marginStart="28dp"
             android:layout_marginBottom="16dp"
             android:background="#653C3C"
             app:layout_constraintBottom_toBottomOf="parent"

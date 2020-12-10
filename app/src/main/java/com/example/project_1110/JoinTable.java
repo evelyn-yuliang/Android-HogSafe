@@ -23,6 +23,8 @@ public class JoinTable extends AppCompatActivity {
     public void join_Proceed(View view) {
 
         if((theCode.getText().toString()).equals(matchCode)){
+            Intent viewMenu = new Intent(this, MenuView.class);
+            startActivity(viewMenu);
             Toast.makeText(getBaseContext(), "Valid code !", Toast.LENGTH_LONG).show();
         }
         else{

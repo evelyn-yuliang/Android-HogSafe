@@ -52,7 +52,7 @@ public class ViewCart extends AppCompatActivity {
                     Double.parseDouble(DummyContent.ITEMS.get(i).itemCost.replace("$", ""));
         }
         TextView t = findViewById(R.id.totalCartCost);
-        t.setText("$" + totalCost);
+        t.setText("Total: $" + totalCost);
     }
 
     public void  onConfirmCheckoutClick(View view){
@@ -64,7 +64,7 @@ public class ViewCart extends AppCompatActivity {
         String json = gson.toJson(cartItems);
         editor.putString("CART_ITEMS",json);
         editor.apply();
-        Intent cartSuccessActivity = new Intent(getApplicationContext(),HomeActivity.class);
+        Intent cartSuccessActivity = new Intent(getApplicationContext(),ThankYou.class);
         startActivity(cartSuccessActivity);
     }
 }

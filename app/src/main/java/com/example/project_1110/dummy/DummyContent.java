@@ -47,7 +47,7 @@ public class DummyContent {
 
     private static ArrayList<DummyItem> itemCreator (){
         ArrayList arr = new ArrayList<DummyItem>();
-        arr.add(new DummyItem("0","Makizushi","Rice cut","https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/07_Sushi.jpg","$10","1"));
+        arr.add(new DummyItem("0","Makizushi","Rice cut","https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/01_Sushi.jpg","$10","1"));
         arr.add(new DummyItem("1","Gunkan Maki","Sheet of nori seaweed","https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/06_Sushi.jpg","$23","1"));
         arr.add(new DummyItem("2","Temaki","Strip of fresh tuna","https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/05_Sushi.jpg","$14","1"));
         arr.add(new DummyItem("3","Narezushi","Thicker variety","https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/04_Sushi.jpg","$17","1"));

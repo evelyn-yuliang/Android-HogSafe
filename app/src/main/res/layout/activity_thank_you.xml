@@ -4,27 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewCart">
+    tools:context=".ThankYou"
+    android:background="#191818">
 
-    <FrameLayout
-        android:id="@+id/cart_item_list_frame"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="60dp" />
 
     <TextView
-        android:id="@+id/totalCartCost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:id="@+id/hogsafe"
+        android:layout_width="220dp"
+        android:layout_height="66dp"
+       android:layout_marginTop="50sp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center_horizontal|top"
+        android:text="@string/hogsafe"
+        android:textAppearance="@style/hogsafe"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:text="500"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        android:fontFamily="sans-serif-black"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thank you \n For your order! \n\nSee you later!"
+        android:layout_marginTop="100sp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center_horizontal|top"
+        android:textColor="@color/white"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@id/view_cart"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hogsafe"/>
+
 
     <Button
         android:id="@+id/view_cart"
@@ -33,10 +43,9 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/bg_orange"
         android:textSize="30sp"
-        android:text="Confirm Checkout!"
+        android:text="home"
         android:onClick="onConfirmCheckoutClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

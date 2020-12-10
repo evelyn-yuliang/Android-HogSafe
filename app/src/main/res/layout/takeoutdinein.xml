@@ -26,7 +26,6 @@
         android:layout_marginTop="196dp"
         android:layout_marginEnd="96dp"
         android:fontFamily="sans-serif-condensed"
-        android:background="@color/black"
 
         android:gravity="center_horizontal|top"
         android:text="@string/takeout"
@@ -46,7 +45,6 @@
         android:layout_marginEnd="96dp"
         android:background="@drawable/bg_orange"
         android:backgroundTint="#D15028"
-
         android:fontFamily="sans-serif-condensed"
         android:gravity="center_horizontal|top"
         android:text="@string/takeout"
