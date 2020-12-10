@@ -13,17 +13,17 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.takeoutdinein);
+        setContentView(R.layout.activity_home);
 
     }
 
     public void onDineInClick(View view) {
-        Intent dineIn = new Intent(this, DineIn.class);
+        Intent dineIn = new Intent(this, MainActivity.class);
         startActivity(dineIn);
     }
 
     public void onDineOutClick(View view) {
-        Intent dineOut = new Intent(this, DineOut.class);
+        Intent dineOut = new Intent(this, MainActivity2.class);
         startActivity(dineOut);
     }
 
@@ -31,4 +31,5 @@ public class HomeActivity extends AppCompatActivity {
         Intent search = new Intent(this, SecondActivity.class);
         startActivity(search);
     }
+
 }
