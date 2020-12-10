@@ -16,7 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 
+import java.time.LocalDate;
 import java.util.Calendar;
+import java.util.Date;
 
 public class BookTable extends AppCompatActivity {
 
@@ -54,10 +56,10 @@ public class BookTable extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                 personName = name.getText().toString();
-                 personCount = count.getText().toString();
-                 personTime = time.getText().toString();
-                 personEmail = email.getText().toString();
+                personName = name.getText().toString();
+                personCount = count.getText().toString();
+                personTime = time.getText().toString();
+                personEmail = email.getText().toString();
 
                 Boolean buyOut_CheckBox = buyOut.isChecked();
                 addEvent(personName,personCount,personTime,personEmail,buyOut_CheckBox);
@@ -65,12 +67,26 @@ public class BookTable extends AppCompatActivity {
         });
     }
 
-
     public void addEvent(String name, String count, String time, String email, Boolean buyOut_Choice) {
+        if(time.equals(null) || time.equals("")){
+            time = "12:00";
+        }
+        String time1 = time.replaceAll("[^\\d]", " ");
+        time1 = time1.trim();
+        time1 = time1.replaceAll(" +", " ");
+        String[] newTime = time1.split("\\s+");
+
         Calendar beginTime = Calendar.getInstance();
-        beginTime.set(2020, 11, 10, 7, 30);
+        Date today = new Date();
+        int hr = Integer.parseInt(newTime[0]);
+        int min =  Integer.parseInt(newTime[1]);
+        int dom = today.getDate();
+
+
+        beginTime.set(2020, 11,dom , hr, min);
         Calendar endTime = Calendar.getInstance();
-        endTime.set(2020, 11, 10, 11, 30);
+        endTime.set(2020, 11, dom, 16, 00);
+
         Intent intent = new Intent(Intent.ACTION_INSERT)
                 .setData(CalendarContract.Events.CONTENT_URI)
                 .putExtra(CalendarContract.Events.ALL_DAY, buyOut_Choice)
@@ -85,15 +101,9 @@ public class BookTable extends AppCompatActivity {
             startActivity(intent);
         }
     }
-
-
     public void bookTable(View view) {
         Intent viewMenu = new Intent(this, MenuView.class);
         startActivity(viewMenu);
-
-
         Toast.makeText(this, "Booked Table!", Toast.LENGTH_SHORT).show();
-
-
     }
 }

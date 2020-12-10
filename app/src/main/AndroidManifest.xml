@@ -28,7 +28,7 @@
         <activity android:name=".MenuView" />
         <activity android:name=".MainActivity" />
         <activity android:name=".MainActivity2"></activity>
-        <activity android:name=".SecondActivity" />
+        <activity android:name=".SecondActivity"></activity>
         <activity android:name=".BookTable" />
         <activity android:name=".JoinTable" />
         <activity android:name=".TakeoutDinein"></activity>

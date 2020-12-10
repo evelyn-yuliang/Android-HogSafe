@@ -19,6 +19,7 @@
             android:id="@+id/frameBackground"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#F1A0A0"
             android:scaleType="centerCrop"
             android:src="@drawable/background"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -28,29 +29,31 @@
 
     <EditText
         android:id="@+id/textRestaurantDetails"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:layout_width="183dp"
+        android:layout_height="79dp"
         android:layout_marginTop="150dp"
-        android:layout_marginBottom="90dp"
-        android:background="@drawable/bg_rectangle"
+        android:background="#3C1111"
+        android:fontFamily="sans-serif-condensed-medium"
         android:inputType="textMultiLine"
-        android:fontFamily="sans-serif-condensed"
-        android:textSize="36sp"
-        android:textStyle="bold"
         android:text="HOYA SUSHI"
         android:textAlignment="center"
-        android:textColor="@color/textBlack"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#2C1111"
+        android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonViewMenu"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_width="241dp"
+        android:layout_height="57dp"
         android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-black"
         android:onClick="onViewMenuClick"
         android:text="View Menu"
+        android:textColor="#450F0F"
         android:textSize="18sp"
         android:background="@drawable/bg_bt_primary"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -60,6 +63,7 @@
     <RelativeLayout
         android:layout_width="300dp"
         android:layout_height="220dp"
+        android:backgroundTint="#AD320B0B"
         android:layout_marginTop="30dp"
         android:background="@drawable/bg_rectangle"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -74,8 +78,11 @@
             android:textSize="18sp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
+            android:backgroundTint="#371212"
+            android:fontFamily="sans-serif-black"
             android:onClick="startTable"
-            android:text="Start a table" />
+            android:text="Start a table"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonJoinTable"
@@ -86,8 +93,11 @@
             android:layout_marginTop="20dp"
             android:layout_below="@id/buttonStartTable"
             android:layout_centerHorizontal="true"
+            android:backgroundTint="#371212"
+            android:fontFamily="sans-serif-black"
             android:onClick="onJoinTable"
             android:text="Join a table" />
+            android:textColor="#FFFCFC" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
