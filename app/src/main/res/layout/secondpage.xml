@@ -8,11 +8,11 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="56dp"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tt" />
 
@@ -26,8 +26,6 @@
         android:layout_marginTop="196dp"
         android:layout_marginEnd="96dp"
         android:fontFamily="sans-serif-condensed"
-        android:background="@color/black"
-
         android:gravity="center_horizontal|top"
         android:text="@string/takeout"
         android:textAppearance="@style/hogsafe"
@@ -36,28 +34,27 @@
 
     <TextView
         android:id="@+id/hogsafe2"
-        android:layout_width="220dp"
+        android:layout_width="211dp"
         android:layout_height="66dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="196dp"
-        android:layout_marginEnd="96dp"
-        android:background="#FF5722"
+        android:background="@drawable/bg_orange"
         android:backgroundTint="#D15028"
-
         android:fontFamily="sans-serif-condensed"
         android:gravity="center_horizontal|top"
         android:text="@string/takeout"
         android:textAppearance="@style/hogsafe"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="316dp"
-        android:layout_height="188dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="156dp"
+        android:layout_width="350dp"
+        android:layout_height="280dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/dinein" />
@@ -69,7 +66,7 @@
         android:layout_height="66dp"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="212dp"
-        android:background="#FF5722"
+        android:background="@drawable/bg_orange"
         android:backgroundTint="#D15028"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center_horizontal|top"
