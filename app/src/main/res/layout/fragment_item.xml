@@ -1,37 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    xmlns:numberpicker="http://schemas.android.com/apk/res-auto">
 
     <ImageView
         android:id="@+id/frameBackground"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
+        android:layout_width="110dp"
+        android:layout_height="100dp"
         android:src="@drawable/ic_launcher_foreground" />
 
     <RelativeLayout
-        android:layout_width="290dp"
-        android:layout_height="60dp">
+        android:layout_width="270dp"
+        android:layout_height="100dp">
 
         <TextView
             android:id="@+id/content"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:text="Salmon and Avocado roll" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:text="Salmon and Avocado roll"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"/>
 
-        <TextView
+        <!-- <EditText
             android:id="@+id/item_quantity"
-            android:layout_width="match_parent"
+            android:layout_width="50dp"
             android:layout_height="20dp"
             android:layout_below="@id/content"
-            android:text="8 pcs" />
+            android:text="1" /> -->
+
+        <com.travijuu.numberpicker.library.NumberPicker
+            android:id="@+id/item_quantity"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="10dp"
+            numberpicker:min="1"
+            numberpicker:max="50"
+            numberpicker:value="1"
+            numberpicker:unit="1"
+            numberpicker:focusable="false"
+            android:layout_alignParentBottom="true"
+
+            />
 
         <Button
+            android:id="@+id/addToCart"
             android:layout_width="40dp"
-            android:layout_height="15dp"
-            android:layout_below="@id/item_quantity" />
+            android:layout_height="40dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="50dp"
+           android:layout_alignParentRight="true"
+            android:background="@drawable/cart"/>
 
+        <TextView
+            android:id="@+id/cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="555555"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:layout_below="@id/content"/>
     </RelativeLayout>
 
 </LinearLayout>

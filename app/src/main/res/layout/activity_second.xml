@@ -8,7 +8,6 @@
     tools:context=".SecondActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
@@ -25,7 +24,6 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:shadowColor="@color/colorPrimary"
             android:shadowDx="-2"
             android:shadowDy="-2"
@@ -43,12 +41,11 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:shadowColor="@color/colorPrimary"
             android:shadowDx="-2"
             android:shadowDy="-2"
             android:shadowRadius="3"
-            android:text="Restaurant"
+            android:text="Restaurants"
             android:textColor="#FF5722"
             android:textSize="35dp"
             android:textStyle="bold"
@@ -57,73 +54,17 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textView1" />
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/bg_map"
-            android:hint="M9V3Y3"
-            android:paddingLeft="10dp"
-            android:textColorHint="#ACA5A5"
-            android:textStyle="bold"
-            app:layout_constraintHorizontal_bias="0.49"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView2" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="16dp"
-            app:layout_constraintRight_toRightOf="@id/editText"
-            app:layout_constraintTop_toBottomOf="@id/textView2"
-            app:srcCompat="@drawable/gps" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="365dp"
-            android:layout_height="490dp"
+            android:layout_height="540dp"
             android:layout_margin="10dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editText" />
+           app:layout_constraintTop_toBottomOf="@id/textView2"/>
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/back"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="640dp"
-            app:layout_constraintLeft_toLeftOf="@id/recycler_view"
-            app:layout_constraintBottom_toBottomOf="@id/recycler_view"
-            />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:onClick="onDineInClick"
-            android:text="dine in"
-            android:layout_marginStart="20dp"
-            app:layout_constraintBottom_toBottomOf="@id/recycler_view"
-            app:layout_constraintLeft_toRightOf="@id/imageView4"
-            tools:layout_editor_absoluteX="109dp" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="12dp"
-            android:onClick="onDineOutClick"
-            android:text="dine out"
-            app:layout_constraintBottom_toBottomOf="@id/recycler_view"
-            app:layout_constraintLeft_toRightOf="@id/button" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

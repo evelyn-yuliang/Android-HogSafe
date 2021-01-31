@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThankYou"
+    android:background="#191818">
+
+
+    <TextView
+        android:id="@+id/hogsafe"
+        android:layout_width="220dp"
+        android:layout_height="66dp"
+       android:layout_marginTop="50sp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center_horizontal|top"
+        android:text="@string/hogsafe"
+        android:textAppearance="@style/hogsafe"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thank you \n For your order! \n\nSee you later!"
+        android:layout_marginTop="100sp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center_horizontal|top"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hogsafe"/>
+
+
+    <Button
+        android:id="@+id/view_cart"
+        android:layout_width="400sp"
+        android:layout_height="80sp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_orange"
+        android:textSize="30sp"
+        android:text="home"
+        android:onClick="onConfirmCheckoutClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

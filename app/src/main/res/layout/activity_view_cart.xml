@@ -4,23 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuView">
+    tools:context=".ViewCart">
 
     <FrameLayout
-        android:id="@+id/menu_item_list_frame"
+        android:id="@+id/cart_item_list_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="60dp" />
 
+    <TextView
+        android:id="@+id/totalCartCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="500"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/view_cart"/>
+
     <Button
         android:id="@+id/view_cart"
-        android:layout_width="200sp"
-        android:layout_height="30sp"
+        android:layout_width="400sp"
+        android:layout_height="80sp"
         android:layout_marginBottom="10dp"
-        android:text="View Cart"
-        android:onClick="onViewCartClick"
-        android:textSize="24sp"
         android:background="@drawable/bg_orange"
+        android:textSize="30sp"
+        android:text="Confirm Checkout!"
+        android:onClick="onConfirmCheckoutClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
